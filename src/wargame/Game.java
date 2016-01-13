@@ -89,7 +89,7 @@ public class Game {
 		int countWinners = 0;
 		
 		for (Player player : this.players) {
-			if (maxScore == winner.getCapturedDeck().size()) {
+			if (maxScore == player.getCapturedDeck().size()) {
 				countWinners++;
 			}
 		}

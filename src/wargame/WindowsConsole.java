@@ -10,16 +10,10 @@ public class WindowsConsole implements IConsole {
 	
 	public WindowsConsole() throws IOException, InterruptedException {
 		runtime = Runtime.getRuntime();
-		Process cmd = runtime.exec("cmd /c start");
+		Process cmd = runtime.exec("cmd /c start | dir");
 		new Thread(new SyncPipe(cmd.getErrorStream(), System.err)).start();
 	    new Thread(new SyncPipe(cmd.getInputStream(), System.out)).start();
 	    PrintWriter stdin = new PrintWriter(cmd.getOutputStream());
-	    stdin.println("dir");
-	    stdin.flush();
-	    stdin.close();
-	    int returnCode = cmd.waitFor();
-	    System.out.println("Return code = " + returnCode);
-
 	}
 
 	@Override
