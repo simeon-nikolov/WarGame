@@ -2,10 +2,10 @@ package wargame;
 
 import java.util.Locale;
 
-public class EclipseConsole implements IConsole {
+public class StandartConsole implements IConsole {
 	private static final int CONSOLE_ROWS = 35;
 	
-	public EclipseConsole() {
+	public StandartConsole() {
 		Locale.setDefault(Locale.US);
 	}
 
